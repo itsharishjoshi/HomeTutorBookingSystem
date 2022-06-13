@@ -1,0 +1,76 @@
+body{
+    background: #ffccfc;
+}
+.cards-container{
+    margin-top: 110px !important;
+}
+.card{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    padding-top: 10px;
+    border-radius: 20px;
+    transition: transform .3s;
+}
+.card:hover{
+    transform: translateY(-15px);
+    transition: transform .3s;
+}
+.text1{
+    font-size: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.tutor-count{
+    background-color: #FFCCFC;
+    padding: 10px;
+    color: #800080;
+    border-radius: 5px;
+}
+.subject-1:hover{
+    opacity: .8;
+}
+.subject-category{
+    margin-top: 20px;
+    font-weight: bold;
+}
+.view-tutors-btn{
+    background-color: #800080;
+    border-radius: 0px 0px 20px 20px;
+}
+.view-tutors-btn a{
+    color: #fff;
+}
+
+/** Subjects Section Title ****/
+.subjects-section-title, subject-section-lead{
+    color: #800080;
+}
+
+/******* CSS for Testimonial Section ********/
+.testimonial-section, .hero{
+    background-color: #800080;
+}
+.testimonial-img{
+    height:5rem;
+    width: 5rem;
+    border-radius: 75%;
+}
+.fa-star, .fa-star-half-alt{
+    color: #800080;
+}
+.fa-quote-left{
+    font-size: 2rem;
+}
+.testimonial-icon{
+    color: #800080;
+}
+.jumbotron-fluid{
+    background: #ffccfc;
+}
+/***************** CSS for Navbar section *************************/
+.nav-item{
+    margin-right: 20px;
+    background-color: white;
+}
+

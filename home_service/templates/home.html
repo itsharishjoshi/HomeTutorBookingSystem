@@ -1,0 +1,210 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<!---Hero Starts Here ------>
+<div class="hero">
+    <div class="container col-xxl-8 px-4 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img alt="Bootstrap Themes" class="d-block mx-lg-auto img-fluid" height="500" loading="lazy"
+                     src="/static/images/hero-img.png" width="500">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3 text-white">Free Expert Tutors at Your Doorsteps!</h1>
+                <p class="lead text-white">Connect with 100s of tutors on various subjects. Search for a tutor in your city &
+                    connect
+                    with them for 100% Free!</p>
+                <div class="d-grid gap-1 d-md-flex justify-content-md-start mt-5">
+                    <button class="btn btn-lg px-4 mr-2" id="hero-btn-1" type="button"><a href="/#subjects">Subjects</a>
+                    </button>
+                    <button class="btn btn-lg px-4" id="hero-btn-2" type="button"><a href="/search_cities">Find a
+                        Tutor!</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---Hero Ends Here --------->
+</div>
+</header>
+<!---Subject Section Start Here ---->
+
+<!--    <iframe style="height:0"></iframe><div class="bannerbottom py-lg-5 py-md-4 py-md-3 py-2">-->
+
+<!-----Container for all subjects ---------->
+<div class="container cards-container">
+     <div class="text-center my-3 py-4">
+         <h2 class="display-5 mb-3 subjects-section-title" id="subjects">We have got you covered!</h2>
+         <p class="lead h5 subject-section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut id quia
+                sed.</p>
+     </div>
+<!--    <h1 align="center" class="mb-5 subjects-section-title" id="subjects">We have got you covered!</h1>-->
+    <div class="row cards-row">
+        {% for i in ser %}
+        <div class="col-md-4 col-sm-12">
+            <div class="card mt-3">
+                <div class="subject-1 align-items-center p-2 text-center">
+                    <img alt="" class="rounded" src="{{i.image.url}}"
+                         width="160">
+                    <h5 class="subject-category">{{i.category}}</h5>
+                    <div class="mt-3 info">
+                        <span class="text1 d-block">{{i.desc|slice:":80" }}</span>
+                    </div>
+                    <div class="tutors mt-3 text-dark"></div>
+                    <span class="tutor-count">{{i.total}} Tutors</span>
+                </div>
+                <!--Button for card--->
+                <div class="p-3 view-tutors-btn text-center text-white mt-3 cursor">
+                    <span class="text-uppercase"><a href="{% url 'explore_services' i.id %}">View Tutors</a></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--    <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        {% for i in ser %}-->
+<!--                        <div class="col-md-4 col-sm-12 w3_ban1 mb-3">-->
+<!--                            <div class="card">-->
+<!--                                <img alt="Card image cap" class="card-img-top" src="{{i.image.url}}"-->
+<!--                                     style="height : 250px border-radius: 15px">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">{{i.category}} <span style="color:red">[<span-->
+<!--                                            style="color:black;font-weight:bold">{{i.total}}</span>]</span></h5>-->
+<!--                                    <p class="card-text">{{i.desc}}</p>-->
+<!--                                    <a class="btn btn-primary my-3" href="{% url 'explore_services' i.id %}">Explore</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        {% endfor %}-->
+
+<!--                    </div>-->
+<!--        </div>-->
+
+
+<!----------Testimonial Section Starts --------------->
+<div class="testimonial-section">
+    <div class="container">
+
+       <div class="text-center my-4 py-5">
+            <h2 class="display-5 mb-3 text-white">Join Hundred's of Happy Student's</h2>
+            <p class="lead h5 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut id quia
+                sed.</p>
+        </div>
+
+        <div class="row">
+
+            <!------------------## Testimonial 1 ##------------------------------>
+
+            <div class="col-lg-4 mb-5">
+                <div class="card">
+                    <div class="d-flex p-3 just-content-start align-items-center">
+                        <img alt=""
+                             class="testimonial-img mr-4" src="/static/images/female1.jpg">
+
+                        <div class="name-job-review">
+                            <p class="font-weight-bold mb-0">Marry Williams</p>
+                            <p class="text-muted mb-0">Director</p>
+
+                            <ul class="list-inline text-center m-0">
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p class="mb-0"><i class="fas fa-quote-left testimonial-icon"></i> Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit. Doloribus facere ipsam odit officia perferendis
+                                repudiandae,
+                                veritatis voluptates voluptatum? Autem impedit neque quas repellat veritatis.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------## Testimonial 2 ##------------------------------>
+            <div class="col-lg-4 mb-5">
+                <div class="card">
+                    <div class="d-flex p-3 just-content-start align-items-center">
+                        <img alt=""
+                             class="testimonial-img mr-4" src="/static/images/female2.png">
+
+                        <div class="name-job-review">
+                            <p class="font-weight-bold mb-0">Marry Williams</p>
+                            <p class="text-muted mb-0">Director</p>
+
+                            <ul class="list-inline text-center m-0">
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p class="mb-0"><i class="fas fa-quote-left testimonial-icon"></i> Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit. Doloribus facere ipsam odit officia perferendis
+                                repudiandae,
+                                veritatis voluptates voluptatum? Autem impedit neque quas repellat veritatis.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------## Testimonial 3 ##------------------------------>
+            <div class="col-lg-4 mb-5">
+                <div class="card">
+                    <div class="d-flex p-3 just-content-start align-items-center">
+                        <img alt=""
+                             class="testimonial-img mr-4" src="/static/images/female3.jpg">
+
+                        <div class="name-job-review">
+                            <p class="font-weight-bold mb-0">Marry Williams</p>
+                            <p class="text-muted mb-0">Director</p>
+
+                            <ul class="list-inline text-center m-0">
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                                <li class="list-inline-item"><i class="fas fa-star star-rating"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p class="mb-0"><i class="fas fa-quote-left testimonial-icon"></i> Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit. Doloribus facere ipsam odit officia perferendis
+                                repudiandae,
+                                veritatis voluptates voluptatum? Autem impedit neque quas repellat veritatis.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+<!----------Testimonial Section Ends --------------->
+
+
+</div>
+
+{% endblock %}

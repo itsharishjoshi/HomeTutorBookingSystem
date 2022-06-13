@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+</div>
+</header>
+
+<div class="tutor-search" style="background-color: #FFCCFC; padding-top: 70px; min-height: 500px;">
+
+    <div class="container">
+        <div class="text-center pb-5">
+            <h2 class="display-5 mb-3">Search Expert Tutor's in your City!</h2>
+            <p class="lead h5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut id quia
+                sed.</p>
+        </div>
+
+        <div class="container-fluid" style="">
+            {% if not terror %}
+            <div class="row">
+                <div class="col-12">
+                    <form action="" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-3"></div>
+                            <div class="form-group col-6">
+                                <label class="searchlabel" for="exampleInputPassword1">Choose your City!</label>
+                                <select class="form-control custom-select bg-white border-left-0 border-md searchoptions"
+                                        name="city">
+                                    {% for i in car %}
+                                    <option value="{{i.city}}">{{i.city}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group col-3"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-3"></div>
+                            <div class="form-group col-6">
+                                <label class="searchlabel" for="exampleInputPassword1">Subject</label>
+                                <select class="form-control custom-select bg-white border-left-0 border-md"
+                                        name="cat">
+                                    {% for i in car1 %}
+                                    <option value="{{i.category}}">{{i.category}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group col-3"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-3"></div>
+                            <div class="form-group col-6">
+                                <button class="search-btn btn" type="submit">Search</button>
+                            </div>
+                            <div class="form-group col-3"></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <div class="container-fluid" style="margin-top:1%">
+                <div align="center" class="container">
+                    <div class="container-fluid">
+                        <h4 align="center" class="mb-5 rounded py-2 shadow" style="background-color: #800080; padding: 15px, 15px;">
+                            <span style="color:#fff;">{{count1}} Record Found </span> <span style="color:#fff"><span
+                                style="color:#FFCCFC;">"{{c1}}"</span></span> <span style="color:#fff">Tutor in</span>
+                            <span style="color:#fff;"><span style="color:#FFCCFC;">"{{c}}"</span></span> <span style="color:#fff">city.</span>
+                        </h4>
+                    </div>
+                    {% for i in order %}
+                    <div class="row"
+                         style="margin-bottom:1%;border-radius:8px;padding:12px;width:90%;border:1px solid lightgrey">
+                        <div class="col-md-4">
+                            <img src="{{i.image.url}}" style="width:60%;border-radius:50%;height:180px">
+                        </div>
+                        <div align="left" class="col-md-4">
+                            <h4 style="font-weight:bold">{{i.user.first_name}} {{i.user.last_name}}</h4>
+                            <ul style="color:grey">
+                                <li>Mobile No. :- {{i.contact}}</li>
+                                <li>Address :- {{i.address}}</li>
+                                <li>Subject :- {{i.service_name}}</li>
+                                <li>Experience :- {{i.experience}} Year</li>
+                                <li>City :- {{i.city}}</li>
+                                <a href="{% url 'booking' i.id %}">
+                                    <button class="btn btn-success" style="margin-top:8%;width:60%">Book Now</button>
+                                </a>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <img src="{{i.id_card.url}}" style="width:75%">
+                            <h4>{{i.id_type}}</h4>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
