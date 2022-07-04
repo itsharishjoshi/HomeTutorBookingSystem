@@ -2233,7 +2233,20 @@ section.footer h3 {
 
 /********** Contact Us Page CSS Ends Here ***********/
 
+/****************** Register Page & Login Page CSS Starts Here ***************/
+.signup-form{
+    background-color: #800080;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+.signup-btn{
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #800080;
+}
 
+/***************** Register Page & Login Page CSS Ends Here ***********************/
 
 
 /** Responsive **/
@@ -2293,7 +2306,6 @@ section.footer h3 {
 }
 ul.navbar-nav.ml-auto {
     text-align: center;
-    background-color: #000;
 }
 a.dropdown-item {
     text-align: center;
@@ -2769,6 +2781,11 @@ h4.w3ls-title.text-center.text-uppercase.pb-md-5.pb-4 {
     font-size: 25px;
     letter-spacing: 0px;
 }	
-}     
+}
+
+@media screen and (max-width: 800px){
+.dblock{
+display:block;}
+}
 /** /responsive **/
 

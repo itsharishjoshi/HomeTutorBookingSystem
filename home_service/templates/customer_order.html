@@ -2,71 +2,79 @@
 {% load static %}
 {% block body %}
 <style>
-    th{
-    color:black;
-    font-weight:bold;
-    }
+.table th{
+    color: white !important;
+    font-weight:bold !important;
+}
+.table td{
+    color: white !important;
+}
+
 </style>
 
-	<div class="w3l_banner_info" style="height:10px">
-		<div class="slider1">
-			<div class="callbacks_container">
-				<ul class="rslides" id="slider3">
-					<li>
-						<div class="slider1-img" style="height:10px">
-							<div class="slider_banner_info">
+<!--	<div class="w3l_banner_info" style="height:10px">-->
+<!--		<div class="slider1">-->
+<!--			<div class="callbacks_container">-->
+<!--				<ul class="rslides" id="slider3">-->
+<!--					<li>-->
+<!--						<div class="slider1-img" style="height:10px">-->
+<!--							<div class="slider_banner_info">-->
 
 
-							</div>
-						</div>
-					</li>
+<!--							</div>-->
+<!--						</div>-->
+<!--					</li>-->
 
 
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- //banner-slider -->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!-- //banner-slider -->
 </div>
 </header>
 
-<div class="container-fluid" style="margin-top:10%">
-               <div class="container">
-                            <div class="container-fluid">
-                               <h2 style="font-weight:bold;font-family : 'Monotype Corsiva' ; color : #E6120E ;margin-top:5%" align="center">My Order</h2><hr>
-                            </div>
-                                <table class="table table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th style="color:black">#</th>
-                                      <th style="color:black">Service</th>
-                                      <th style="color:black">Maid</th>
-                                      <th style="color:black">Contact</th>
-                                      <th style="color:black">Date</th>
-                                      <th style="color:black">Days</th>
-                                      <th style="color:black">Hours</th>
-                                      <th style="color:black">Status</th>
-                                      <th style="color:black">View detail</th>
-                                      <th style="color:black">Action</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                              {% for i in order %}
-                                <tr>
-                                  <td>{{forloop.counter}}</td>
-                                  <td>{{i.service.service_name}}</td>
-                                  <td>{{i.service.user.first_name}} {{i.service.user.last_name}}</td>
-                                  <td>{{i.service.contact}}</td>
-                                  <td>{{i.book_date}}</td>
-                                  <td>{{i.book_days}}</td>
-                                  <td>{{i.book_hours}}</td>
-                                  <td>{{i.status.status}}</td>
-                                  <td><a href="{% url 'Booking_detail' i.id %}" ><i style="font-size:30px;color:green" class="fa fa-eye"></i></a></td>
-                                  <td><a href="{% url 'delete_Booking' i.id %}" ><i style="font-size:30px;color:red" class="fa fa-times" onclick="return confirm('Are You Confirm?')"></i></a></td>
-                              </tr>
-                              {% endfor %}
-                          </tbody>
-                      </table>
-             </div>
+<div class="container-fluid" style="padding-top:7%; background-color: #800080; min-height: 450px;">
+    <div class="container">
+        <div class="container-fluid pb-5">
+           <h1 class="display-5 text-white text-center pt-3">My Bookings</h1>
+            <hr style="width: 25%; background-color: #fff; padding: 1px;">
+        </div>
+        <table class="table table-hover dblock" style="overflow-x: auto; white-space: nowrap; margin:auto;">
+            <thead>
+            <tr>
+                <th scope="col" >#</th>
+                <th scope="col" >Subject</th>
+                <th scope="col" >Teacher</th>
+                <th scope="col" >Contact</th>
+                <th scope="col" >Date</th>
+                <th scope="col" >Days</th>
+                <th scope="col" >Hours</th>
+                <th scope="col" >Status</th>
+                <th scope="col" >View detail</th>
+                <th scope="col" >Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in order %}
+            <tr>
+                <td scope="row">{{forloop.counter}}</td>
+                <td>{{i.service.service_name}}</td>
+                <td>{{i.service.user.first_name}} {{i.service.user.last_name}}</td>
+                <td>{{i.service.contact}}</td>
+                <td>{{i.book_date}}</td>
+                <td>{{i.book_days}}</td>
+                <td>{{i.book_hours}}</td>
+                <td>{{i.status.status}}</td>
+                <td><a href="{% url 'Booking_detail' i.id %}"><i class="fa fa-eye"
+                                                                 style="font-size:30px;color:green"></i></a></td>
+                <td><a href="{% url 'delete_Booking' i.id %}"><i class="fa fa-times" onclick="return confirm('Are You Confirm?')"
+                                                                 style="font-size:30px;color:red"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
-    {% endblock %}
+{% endblock %}

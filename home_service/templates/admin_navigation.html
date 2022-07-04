@@ -147,51 +147,52 @@ h2, h4{
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name" style="width:100%">
-								<h1><span>Home Tutor Booking</span></h1>
+								<a class="navbar-brand" href="{% url 'home' %}"><img height="60px" src="/static/images/logo.png"
+                                                                 width="200px"></a>
 							</div>
 							<!--search-box-->
 
 							<div class="clearfix"> </div>
 						 </div>
 						 <div class="header-right">
-							<div class="profile_details_left"><!--notifications of menu start -->
-								<ul class="nofitications-dropdown">
+<!--							<div class="profile_details_left">&lt;!&ndash;notifications of menu start &ndash;&gt;-->
+<!--								<ul class="nofitications-dropdown">-->
 
-									<li class="dropdown head-dpdn">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">{{count}}</span></a>
-										<ul class="dropdown-menu" style="margin-left:10%">
-											<li>
-												<div class="notification_header">
-													<h3>You have {{count}} new notification</h3>
-												</div>
-											</li>
-											{% for i in new %}
-											<li>
-												<a href="{% url 'service_man_detail' i.id %}">
-												<div class="user_img"><img src="{{i.image.url}}" alt=""></div>
-											   <div class="notification_desc">
-												<p>{{i.user.first_name}} {{i.user.last_name}}</p>
-												</div>
-											  <div class="clearfix"></div>	
-											 </a></li>
-											 <li>
-											{% endfor %}
-												<div class="notification_bottom">
-													<a href="#">See all notifications</a>
-												</div> 
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<div class="clearfix"> </div>
-							</div>
+<!--									<li class="dropdown head-dpdn">-->
+<!--										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">{{count}}</span></a>-->
+<!--										<ul class="dropdown-menu" style="margin-left:10%">-->
+<!--											<li>-->
+<!--												<div class="notification_header">-->
+<!--													<h3>You have {{count}} new notification</h3>-->
+<!--												</div>-->
+<!--											</li>-->
+<!--											{% for i in new %}-->
+<!--											<li>-->
+<!--												<a href="{% url 'service_man_detail' i.id %}">-->
+<!--												<div class="user_img"><img src="{{i.image.url}}" alt=""></div>-->
+<!--											   <div class="notification_desc">-->
+<!--												<p>{{i.user.first_name}} {{i.user.last_name}}</p>-->
+<!--												</div>-->
+<!--											  <div class="clearfix"></div>	-->
+<!--											 </a></li>-->
+<!--											 <li>-->
+<!--											{% endfor %}-->
+<!--												<div class="notification_bottom">-->
+<!--													<a href="#">See all notifications</a>-->
+<!--												</div> -->
+<!--											</li>-->
+<!--										</ul>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--								<div class="clearfix"> </div>-->
+<!--							</div>-->
 							<!--notification menu end -->
 							<div class="profile_details">		
 								<ul>
 									<li class="dropdown profile_details_drop">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 											<div align class="profile_img">
-												<span class="prfil-img"><img src="{% static 'images2/p1.png' %}" alt=""> </span>
+												<span class="prfil-img"><img src="{% static 'images2/p7.png' %}" alt=""> </span>
 												<div class="user-name">
 													<p>{{request.user.username}}</p>
 													<span>Administrator</span>
@@ -202,6 +203,7 @@ h2, h4{
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
+											<li> <a href="{% url 'admin_home' %}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a> </li>
 											<li> <a href="{% url 'admin_change_password' %}"><i class="fa fa-cog"></i> Settings</a> </li>
 											<li> <a href="{% url 'admin_profile' %}"><i class="fa fa-user"></i> Profile</a> </li>
 											<li> <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a> </li>

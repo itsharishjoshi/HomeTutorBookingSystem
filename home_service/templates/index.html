@@ -2,7 +2,7 @@
 {% load static %}
 <html>
 <head>
-    <title>Counselling Edge</title>
+    <title>Tutor Desk</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta charset="utf-8">
     <link href="/home_service/static/images/favicon.png" rel="icon" type="image/x-icon">
@@ -14,6 +14,7 @@
     <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'css/style.css' %}" media="all" rel="stylesheet" type="text/css"/>
     <link href="{% static 'css/subjects.css' %}" media="all" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/user_home.css' %}" media="all" rel="stylesheet" type="text/css"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -42,7 +43,7 @@
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
                            data-toggle="dropdown"
-                           href="#" id="navbarDropdown" role="button" style="background-color:#800080">
+                           href="#" id="navbarDropdown" role="button" style="background-color:#800080; color: #fff;">
                             <i class="fa fa-user"></i> Hello,{{request.user.username}}
                         </a>
                         <div aria-labelledby="navbarDropdown" class="dropdown-menu">
@@ -61,7 +62,7 @@
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="{% url 'service' %}" style="color : black">
-                            <i class="fa fa-car"></i> Subjects</a>
+                            <i class="fa fa-list"></i> Subjects</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="{% url 'customer_order' %}" style="color : black">
@@ -70,13 +71,13 @@
 
                     <li class="nav-item ">
                         <a class="nav-link" href="{% url 'search_cities' %}" style="color : black">
-                            <i class="fa fa-search"></i>Search Tutor</a>
+                            <i class="fa fa-search"></i> Search Tutor</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
                            data-toggle="dropdown"
-                           href="#" id="navbarDropdown" role="button" style="background-color:#800080;">
+                           href="#" id="navbarDropdown" role="button" style="background-color:#800080; ; color: #fff;">
                             <i class="fa fa-user"></i> Hello,{{request.user.username}}
                         </a>
                         <div aria-labelledby="navbarDropdown" class="dropdown-menu">
@@ -187,7 +188,7 @@
                 ></a>
             </div>
             <div class="copyright">
-                <p>©2022 Counselling Edge. All Rights Reserved <br>Designed And Developed by <a
+                <p>©2022 Tutor Desk. All Rights Reserved <br>Designed And Developed by <a
                         href="https://harishjoshi.com">Harish
                     Joshi</a></p>
 
