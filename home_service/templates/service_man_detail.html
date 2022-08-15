@@ -4,7 +4,7 @@
 
 <div class="climate">
 	<div class="container" style="width:80%">
-        <h1 style="font-weight:bold;font-family : 'Monotype Corsiva' ; color : #E6120E ;margin-top:2%" align="center">TUTOR DETAIL</h1><hr>
+        <h1 align="center">Tutor Details</h1><hr>
 
         <div class="climate-grid1">
             <h3 style="padding:20px;background-color:Darkslategrey;color:white;font-weight:bold">Tutor Detail</h3>
@@ -36,7 +36,7 @@
             </div>
 		</div>
         {% ifnotequal  pro.status.status 'Accept' %}
-        <center><a href="{% url 'status' pro.id %}" ><button class="btn btn-success">Take Action</button></a></center>
+        <center><a href="{% url 'status' pro.id %}" ><button class="btn" style="width:100%; margin-bottom: 30px; color:#fff; background-color: #800080;">Take Action</button></a></center>
         {% endifnotequal %}
     </div>
 </div>

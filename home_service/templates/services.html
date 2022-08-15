@@ -26,19 +26,19 @@
 
 <!-----Container for all subjects ---------->
 <div class="container cards-container pb-5">
-     <div class="text-center my-3 py-4">
-         <h2 class="display-5 mb-3 subjects-section-title" id="subjects">We have got you covered!</h2>
-         <p class="lead h5 subject-section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut id quia
-                sed.</p>
-     </div>
-<!--    <h1 align="center" class="mb-5 subjects-section-title" id="subjects">We have got you covered!</h1>-->
+    <div class="text-center my-3 py-4">
+        <h2 class="display-5 mb-3 subjects-section-title" id="subjects">We have got you covered!</h2>
+        <p class="lead h5 subject-section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aut
+            id quia
+            sed.</p>
+    </div>
+    <!--    <h1 align="center" class="mb-5 subjects-section-title" id="subjects">We have got you covered!</h1>-->
     <div class="row cards-row">
         {% for i in ser %}
         <div class="col-md-4 col-sm-12">
             <div class="card mt-3">
                 <div class="subject-1 align-items-center p-2 text-center">
-                    <img alt="" class="rounded" src="{{i.image.url}}"
-                         width="160">
+                    <img alt="" class="rounded" src="{{i.image.url}}" width="160">
                     <h5 class="subject-category">{{i.category}}</h5>
                     <div class="mt-3 info">
                         <span class="text1 d-block">{{i.desc|slice:":80" }}</span>

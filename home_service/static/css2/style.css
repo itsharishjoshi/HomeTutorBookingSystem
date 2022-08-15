@@ -811,7 +811,7 @@ ul.dropdown-menu.drp-mnu li {
 /*inner-block--*/
 .inner-block {
     padding: 0;
-    background: #fafafa;
+    background: #fff;
 }
 .market-update-block {
     padding: 2em 2em;
@@ -1267,7 +1267,7 @@ span.malorum-pro {
 }
 .work-progres {
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
-    padding: 1.34em 1em;
+    padding: 1.34em 1em 0em 1em;
     background: #fff;
 }
 /*--geochart start here--*/

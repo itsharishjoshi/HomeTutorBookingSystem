@@ -44,7 +44,7 @@ def contact(request):
         e = request.POST['email']
         m = request.POST['message']
         status = Status.objects.get(status="unread")
-        Contact.objects.create(status=status,name=n,email=e,message1=m)
+        Contact.objects.create(status=status,name=n,email=e, message1=m)
         error=True
     d = {'error':error}
     return render(request,'contact.html',d)
